@@ -1,3 +1,6 @@
+;; Anything you type in here will be executed
+;; immediately with the results shown on the
+;; right.
 (+ 1 2)
 ;; Anything you type in here will be executed
 ;; immediately with the results shown on the
@@ -54,7 +57,24 @@
 (defn add300 [vect] (reduce + 300 vect))
 (add300 [2 3 5 6 7 8])
 (reduce - [3 4])
-
-
-
-
+(let [x 5] (= :your-road (cond (= x 2 ) :road-not-taken (= x 1) :another-road-not-taken :else :your-road )))
+(if-not (zero? 0 ) 'doom 'doom)
+(if-not (zero? 1 ) 'happy 'doom)
+(defn explain-defcon-level [exercise-term]
+     (case exercise-term
+           :fade-out          :you-and-what-army
+           :double-take       :call-me-when-its-important
+           :round-house       :o-rly
+           :fast-pace         :thats-pretty-bad
+           :cocked-pistol     :sirens
+           :say-what?))
+(explain-defcon-level :cocked-)
+(explain-defcon-level :cocked-pistol)
+(map (fn [x] (* x 4 x)) [1 2 3 5 6])
+(= '(4 8 12) (map (fn [x] (* 4 x)) [1 2 3]))
+(+ 1 2)
+'(+ 1 2)
+(= '(1 4 9 16 25) (map (fn [x] (* x x)) [1 2 3 4 5]))
+(map (fn [x] (* x x)) [1 2 3 4 5])
+(= '(1 4 9 16 25) [1 4 9 16 25])
+(list [1 4 9 16 25])
