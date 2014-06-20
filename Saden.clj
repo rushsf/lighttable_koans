@@ -1,10 +1,3 @@
-;; Anything you type in here will be executed
-;; immediately with the results shown on the
-;; right.
-(+ 1 2)
-;; Anything you type in here will be executed
-;; immediately with the results shown on the
-;; right.
 (= (list 1 2 3) (vector 1 2 3 ))
 (= '(1 2 3) [1 2 3])
 (= '(1 2 3) #{1 2 3})
@@ -21,8 +14,7 @@
 (multiply-by-ten 2)
 ((fn [n] (* 7 n)) 6)
 (#(* 7 %) 6)
-(((fn [] (* 3 4) )))
-
+((fn [] (* 3 4) ))
 (= 20 ((fn [f] (f 4 5)) * ))
 (fn [f] (f 4 5))
 ((fn [f] (f 4 5)) +)
@@ -78,3 +70,36 @@
 (map (fn [x] (* x x)) [1 2 3 4 5])
 (= '(1 4 9 16 25) [1 4 9 16 25])
 (list [1 4 9 16 25])
+(defn is-vowel [test]
+  (case test
+        :a :vowel
+        :e :vowel
+        :i :vowel
+        :o :vowel
+        :u :vowel
+        :consonant))
+(is-vowel :k)
+(= 0 nil?)
+[:a :b nil :c :d]
+(= (list false false true false false)  (map nil? [:a :b nil :c :d]))
+(map nil? [:a :b nil :c :d])
+'(false false true false false)
+'(1 2 3 4 5)
+(+ 1 2)
+(fn [x] false)
+(filter  number? [1 2 3 + > :sade "a" true false nil])
+(defn foo [a b] (if (< 3 4) b a))
+(foo :bar :baz)
+(< 3 4)
+(= "longest" (reduce (fn [a b] (if (< 3 4 ) b a)) ["which" "word" "is" "longest"]))
+(= "longest" (reduce (fn [a b] (if (< 300 400) b a)) ["which" "word" "is" "longest" "hello"]))
+(reduce (fn [a b] (if true b a)) ["which" "word" "is" "longest" "hello"])
+(> (count "longest") (count "short"))
+(count "longest")
+(defn idontkw
+  [] "hello")
+(str "koans,.fdgd" "sad" (idontkw) "bad")
+;this is a comment
+;http://clojurescriptkoans.com/#runtime-polymorphism/3
+
+
