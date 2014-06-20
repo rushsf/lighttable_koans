@@ -101,5 +101,30 @@
 (str "koans,.fdgd" "sad" (idontkw) "bad")
 ;this is a comment
 ;http://clojurescriptkoans.com/#runtime-polymorphism/3
+(defn sum [& args] (reduce + args))
+(sum 1 2 3)
+(reduce + '(1 2 3))
+(defn sum2 [& args] (apply + args))
+(sum2 1 2 3)
+(defn diff [& args] (reduce - args))
+(diff 1 2 3)
+(reduce - (list 1 2 3))
+(defn diff2 [& args] (apply - args))
+(diff2 1 2 3)
+(apply str ["str1" "str2" "str3"])
+(str "str1" "str2" "str3")
+(def my-strings ["one" "two" "three"])
+(interpose ", " my-strings)
+(concat '(1 2 3) '(2 3 4))
+(defn hello
+  ([] "Hello World!")
+  ([a] (str "Hello, you silly " a "."))
+  ([a & more] (str "Hello to this group: "
+                   (apply str
+                          (interpose ", " (concat (list a) more)))
+                   "!")))
+(= "Hello to this group: Peter, Paul, Mary!"  (hello "Peter" "Paul" "Mary"))
+
+
 
 
